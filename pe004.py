@@ -1,21 +1,21 @@
 def f0(n):
-    """853 ms to compute for 3"""
+    """Nearly a second for 3"""
     rng = range(10**(n - 1), 10**n)
     return max([x*y for x in rng for y in rng if is_palin(x*y)])
 
 
 def f1(n):
-    """9.68 ms to compute for 3"""
+    """Single digit ms. O(terrible)"""
     low = 10**(n - 1) - 1
     hi = 10**n - 1
     best = 0
     for x in range(hi, low, -1):
-        for y in range(hi, low, -1):
+        for y in range(x, low, -1):
             prod = x*y
             if prod < best:
                 # if prod < best when y is hi, we are done
                 # if y is smaller, maybe a new x will work better
-                if y == hi:
+                if y == x:
                     return best
                 else:
                     break
