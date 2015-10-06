@@ -1,8 +1,8 @@
-from eulermath import primes
+from eulermath import primes_less
 
 
 def f(n):
-    """26.4 microseconds to compute for 20"""
+    """19.9 microseconds to compute for 20"""
     prod = 1
     prime_divs = primes_less(n)
     for a in range(2, n + 1):
@@ -19,16 +19,6 @@ def least_prime_div(n, prime_divs):
     for p in prime_divs:
         if n % p == 0:
             return p
-
-
-def primes_less(n):
-    pg = primes()
-    p_list = []
-    current_p = next(pg)
-    while current_p < n:
-        p_list.append(current_p)
-        current_p = next(pg)
-    return p_list
 
 
 def test_f():
