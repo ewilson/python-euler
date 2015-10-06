@@ -22,3 +22,11 @@ The _one-minute rule_ that Project-Euler mentions is surely a bit outdated. I'm 
 
 I'll try to keep the cumulative computation time under 1 second. 
 Currently all tests can be run in under 10 milliseconds.
+
+#### Tests
+
+On my machine, I run tests with:
+
+    $ python3 -m pytest
+    
+Since `$ py.test` alone uses python 2.
