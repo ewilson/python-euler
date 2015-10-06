@@ -17,7 +17,7 @@ def f(n):
     return d
 
 
-def f_test():
+def test_f():
     assert 6857 == f(600851475143)
 
 
