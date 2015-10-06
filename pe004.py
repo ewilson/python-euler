@@ -35,11 +35,11 @@ def is_palin(n):
     return ns == ns[::-1]
 
 
-def f0_test():
-    assert 906609 == f0(3)
+def test_f0():
+    assert 9009 == f0(2)
 
 
-def f1_test():
+def test_f1():
     assert 906609 == f1(3)
 
 

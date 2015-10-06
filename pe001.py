@@ -12,7 +12,7 @@ def f1(n):
 
 
 def test_f0():
-    assert 233168 == f0(1000)
+    assert 23 == f0(10)
 
 
 def test_f1():
