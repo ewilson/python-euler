@@ -14,3 +14,10 @@ def primes():
                 a += 2
                 break
 
+
+def test_primes():
+    pg = primes()
+    p_list = []
+    for _ in range(10):
+        p_list.append(next(pg))
+    assert [2, 3, 5 ,7, 11, 13, 17, 19, 23, 29]

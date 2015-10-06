@@ -1,6 +1,3 @@
-#!/usr/bin/python3
-
-
 from eulermath import primes
 
 
@@ -19,7 +16,3 @@ def f(n):
 
 def test_f():
     assert 6857 == f(600851475143)
-
-
-if __name__ == '__main__':
-    print(f(600851475143))
