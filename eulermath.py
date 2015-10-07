@@ -16,19 +16,16 @@ def primes():
 
 
 def primes_less(n):
-    """Returns all primes less than n"""
-    found_primes = [2]
-    a = 3
-    while a < n:
-        for p in found_primes:
-            if p**2 > a:
-                found_primes.append(a)
-                a += 2
-                break
-            elif a % p == 0:
-                a += 2
-                break
-    return found_primes
+    """under 2 seconds for 2 million"""
+    from math import sqrt, floor
+    test_nums = list(range(3, floor(sqrt(n)), 2))
+    prime_flags = [True] * ((n - 2) // 2)
+    for a in test_nums:
+        next_div = a**2
+        while next_div < n:
+            prime_flags[(next_div-3)//2] = False
+            next_div += 2*a
+    return [2] + [2*i + 3 for i, flag in enumerate(prime_flags) if flag]
 
 
 def test_primes():
