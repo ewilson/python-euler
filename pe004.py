@@ -1,3 +1,6 @@
+from eulerwords import is_palin
+
+
 def f0(n):
     """Nearly a second for 3"""
     rng = range(10**(n - 1), 10**n)
@@ -22,11 +25,6 @@ def f1(n):
             if is_palin(prod):
                 if prod > best:
                     best = prod
-
-
-def is_palin(n):
-    ns = str(n)
-    return ns == ns[::-1]
 
 
 def test_f0():
