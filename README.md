@@ -18,10 +18,10 @@ will give away the solution, but I'm sure others on the Internet have done that 
 #### Performance
 
 The _one-minute rule_ that Project-Euler mentions is surely a bit outdated. I'm including my `timeit` results in the
-`docstring` of each function, and I'm going to try to keep individual problems under 60 milliseconds in any case.
+`docstring` of each function, and I'm going to try to keep individual problems under 1 second for now.
 
-I'll try to keep the cumulative computation time under 1 second. 
-Currently all tests can be run in under 10 milliseconds.
+I'll try to keep the cumulative computation time under 1 minute. 
+Currently all tests can be run in under 1 second.
 
 #### Tests
 

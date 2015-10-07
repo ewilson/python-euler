@@ -22,16 +22,16 @@ BIG_NUM = """73167176531330624919225119674426574742355349194934
 
 def f(n):
     """Single digit ms, O(n)"""
-    num = [int(c) for c in BIG_NUM if c != '\n']
-    nums = []
+    all_nums = [int(c) for c in BIG_NUM if c != '\n']
+    nums_for_prod = []
     for _ in range(n):
-        nums.append(num.pop(0))
-    current = prod(nums)
-    while len(num) > 0:
-        next = num.pop(0)
-        nums.pop(0)
-        nums.append(next)
-        new = prod(nums)
+        nums_for_prod.append(all_nums.pop(0))
+    current = prod(nums_for_prod)
+    while len(all_nums) > 0:
+        next = all_nums.pop(0)
+        nums_for_prod.pop(0)
+        nums_for_prod.append(next)
+        new = prod(nums_for_prod)
         if new > current:
             current = new
     return current
