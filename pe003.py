@@ -2,7 +2,7 @@ from eulermath import primes
 
 
 def f(n):
-    """3.29 ms to compute for 600851475143"""
+    """sindle-digit ms to compute for 600851475143"""
     pg = primes()
     d = n
     p = next(pg)

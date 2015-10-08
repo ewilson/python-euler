@@ -2,7 +2,7 @@ from eulermath import primes_less
 
 
 def f(n):
-    """19.9 microseconds to compute for 20"""
+    """10s of microseconds to compute for 20"""
     prod = 1
     prime_divs = primes_less(n)
     for a in range(2, n + 1):

@@ -1,5 +1,5 @@
 def f(n):
-    """13.3 microseconds for 4000000"""
+    """10s of microseconds for 4000000"""
     a, b = 1, 1
     s = 0
     while a < n:

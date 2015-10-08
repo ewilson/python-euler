@@ -38,4 +38,4 @@ def test_primes():
 
 
 def test_primes_less():
-    assert [2, 3, 5 ,7, 11, 13, 17, 19] == primes_less(20)
+    assert [2, 3, 5, 7, 11, 13, 17, 19] == primes_less(20)
