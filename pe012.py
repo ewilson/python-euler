@@ -1,6 +1,9 @@
 from math import sqrt, floor
 
 
+factors_cache = {}
+
+
 def f(n):
     """Under 200 ms for 500
 
@@ -12,20 +15,7 @@ def f(n):
 
     Full prime factorization might lead to even better performance.
     """
-    factors_cache = {}
-
-    def num_facts(m):
-        """Defined here so as to enclose the factors_cache"""
-        if m in factors_cache:
-            return factors_cache[m]
-        elif m % 2 == 0:
-            twos, odd = pull_twos(m)
-            return (twos + 1) * factors_cache[odd]
-        else:
-            fact_n = factors(m)
-            factors_cache[m] = fact_n
-            return fact_n
-
+    factors_cache.clear()
     odd_part = 1
     half_even_part = (odd_part + 1) // 2
     odd_facts = num_facts(odd_part)
@@ -53,6 +43,19 @@ def factors(n):
         # perfect square, double counted sqrt
         facts -= 1
     return facts
+
+
+def num_facts(m):
+    """Caching optimization"""
+    if m in factors_cache:
+        return factors_cache[m]
+    elif m % 2 == 0:
+        twos, odd = pull_twos(m)
+        return (twos + 1) * factors_cache[odd]
+    else:
+        fact_n = factors(m)
+        factors_cache[m] = fact_n
+        return fact_n
 
 
 def pull_twos(n):
