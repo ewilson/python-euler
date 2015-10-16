@@ -1,9 +1,8 @@
-cl_cache = {}
+from functools import lru_cache
 
 
 def f(n):
-    """About 4 seconds -- which is much, much better than without the cache"""
-    cl_cache.clear()
+    """About a second -- which is much, much better than without the cache"""
     longest = 1
     longest_start = 1
     for num in range(1, n):
@@ -14,15 +13,12 @@ def f(n):
     return longest_start
 
 
+@lru_cache(maxsize=None)
 def collatz_len(n):
     if n == 1:
         return 1
-    elif n in cl_cache:
-        return cl_cache[n]
     else:
-        cl = 1 + collatz_len(collatz_step(n))
-        cl_cache[n] = cl
-        return cl
+        return 1 + collatz_len(collatz_step(n))
 
 
 def collatz_step(n):
