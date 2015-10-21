@@ -5,6 +5,23 @@ def f(n):
     return p(n, n)
 
 
+def f1(n):
+    part = {i: 0 for i in range(1, n+1)}
+    part[1] = n
+    count = 1
+    while part[n] == 0:
+        print(part)
+        part = next_partd(n, part)
+
+def next_partd(n, part):
+    for n in range(1, n):
+        if part[n] >= n+1:
+            part[n+1] += 1
+            #part[n] -=
+
+
+
+
 def f2(n):
     """Errors, and takes 4s for 1000"""
     part_list = n * [1]

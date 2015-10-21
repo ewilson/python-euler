@@ -21,7 +21,7 @@ The _one-minute rule_ that Project-Euler mentions is surely a bit outdated. I'm 
 `docstring` of each function, and I try to keep individual problems under one second.
 
 I'll try to keep the cumulative computation time under 1 minute. 
-Currently all tests can be run in under eight seconds on my machine.
+Currently all tests can be run in under twenty seconds on my machine.
 
 #### Tests
 
