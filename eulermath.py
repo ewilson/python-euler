@@ -31,6 +31,8 @@ def primes_less(n):
 
 
 def is_prime(n):
+    if n == 2:
+        return True
     integer_root = floor(sqrt(n))
     prime_check = primes_less(integer_root + 1)
     return all([ n % p != 0 for p in prime_check])
@@ -50,6 +52,7 @@ def test_primes_less():
 
 
 def test_is_prime():
+    assert is_prime(2)
     assert not is_prime(25)
     assert not is_prime(91)
     assert not is_prime(93)
