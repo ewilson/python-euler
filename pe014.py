@@ -2,7 +2,7 @@ from functools import lru_cache
 
 
 def f(n):
-    """About a second -- which is much, much better than without the cache"""
+    """About a 10 seconds -- good candidate for improvement"""
     longest = 1
     longest_start = 1
     for num in range(1, n):
