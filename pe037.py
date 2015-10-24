@@ -30,3 +30,7 @@ def extend_left(left):
 def extend_right(right):
     candidates = [int(str(n) + str(p)) for p in right for n in range(1,10)]
     return [p for p in candidates if is_prime(p)]
+
+
+def test_f():
+    assert 748317 == f()
